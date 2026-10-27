@@ -1,0 +1,43 @@
+Admin Dashboard / Reporting-এর পুরো full-stack প্রজেক্ট তৈরি হয়েছে, zip ফাইল উপরে দিলাম। সব ফাইলের syntax চেক করেছি এবং পাস করেছে। কিন্তু এখানে npm registry বন্ধ থাকায় npm install চালাতে পারিনি। তাই প্রজেক্টটা আসলে চালিয়ে বা build করে পরীক্ষা করা হয়নি। আপনার মেশিনে একবার চালিয়ে দেখে নেবেন।
+
+Frontend (React 19 + Tailwind v4)
+
+KPI কার্ড: আজকের বিক্রি, মোট বিক্রি (আগের সময়ের তুলনায় কত % বাড়ল বা কমল), মোট অর্ডার, গড় অর্ডার মূল্য।
+চার্ট:
+Line chart: ৫ শাখার প্রতিদিনের বিক্রি এক স্ক্রিনে
+Bar chart: শাখাগুলোর তুলনা
+Donut chart: ক্যাটাগরি অনুযায়ী বিক্রির ভাগ
+পেমেন্ট মেথড ব্রেকডাউন
+ফিল্টার: ৭/৩০/৯০ দিন বা নিজের পছন্দের তারিখ, আর শাখা অনুযায়ী।
+রিপোর্ট টেবিল: সার্চ, সর্ট, স্ট্যাটাস ফিল্টার আর পেজিনেশন আছে। ফিল্টার মেনে Excel ও PDF এক্সপোর্ট করা যায়।
+ডিজাইন ও অ্যানিমেশন:
+Dark mode toggle, আর থিম বদলালে চার্টের রংও বদলায়
+Responsive: মোবাইলে সাইডবার পাশ থেকে স্লাইড করে আসে
+Lenis দিয়ে smooth scroll
+Framer Motion দিয়ে পেইজ বদল, কার্ড, সাইডবার আর লোডিং অ্যানিমেশন
+
+Backend (Node + Express, type: module)
+
+আপনার চাওয়া routes/, controllers/, models/ ফোল্ডার আছে। সাথে middleware/, utils/ আর seed/ যোগ করেছি।
+ডেটাবেস MongoDB, Mongoose দিয়ে।
+লগইন JWT দিয়ে, দুই ধরনের ইউজার: admin সব শাখা দেখবে, manager শুধু নিজের শাখা। এই সীমা সার্ভারেই বসানো, তাই ব্রাউজার থেকে বদলানো যাবে না।
+Excel ফাইল ExcelJS আর PDF ফাইল PDFKit দিয়ে সার্ভারেই তৈরি হয়।
+Seed script ৫টা শাখা আর ৯০ দিনের ডেমো ডেটা বানায়।
+
+চালানোর নিয়ম
+
+bash
+cd server && cp .env.example .env && npm install && npm run seed && npm run dev
+cd client && npm install && npm run dev
+
+ডেমো লগইন
+
+Admin: admin@demo.com / admin123
+Dhaka-র Manager: manager@demo.com / manager123
+
+React-এর ভার্সন ^19.2.0 দিয়েছি। 19.3 বের হয়ে থাকলে npm install নিজেই সেটা নেবে। PDF এক্সপোর্টের লেখা ইংরেজিতে রেখেছি, কারণ PDFKit-এর default font বাংলা দেখাতে পারে না। বাংলা লাগলে একটা বাংলা font (যেমন Hind Siliguri) যোগ করতে হবে।
+
+
+mh0198916_db_user
+oXZuoWaA4XbISiqv
+mongodb+srv://mh0198916_db_user:<db_password>@cluster0.vrkr0pu.mongodb.net/
