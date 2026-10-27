@@ -13,7 +13,9 @@ import { notFound, errorHandler } from "./middleware/errorHandler.js";
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
+const CLIENT_URL = (
+  process.env.CLIENT_URL || "https://dash-b4jp.vercel.app/"
+).replace(/\/+$/, "");
 app.use(express.json());
 app.use(morgan("dev"));
 
