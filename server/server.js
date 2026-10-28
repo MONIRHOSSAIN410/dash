@@ -21,7 +21,7 @@ const app = express();
 
 // Frontend URL
 const CLIENT_URL = (
-  process.env.CLIENT_URL || "https://dash-b4jp.vercel.app"
+  process.env.CLIENT_URL || "https://dash-6h88.vercel.app/"
 ).replace(/\/+$/, "");
 
 // CORS Configuration
