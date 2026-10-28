@@ -4,8 +4,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "node --watch server.js",
-    "start": "node server.js",
+    "dev": "node init && node --watch server.js",
+    "start": "node init && node server.js",
     "seed": "node seed/seed.js"
   },
   "dependencies": {
